@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleOverlayForm.Home">
+  <AbsoluteLayout>
+    <!-- Normal Page Content -->
+    <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All">
+
+      <Button Text="Enter Name"
+              FontSize="Large"
+              VerticalOptions="CenterAndExpand"
+              HorizontalOptions="Center"
+              Clicked="OnButtonClicked" />
+
+    </StackLayout>
+
+    <!-- Overlay -->
+    <ContentView x:Name="overlay"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All"
+                 IsVisible="False"
+                 BackgroundColor="#C0808080"
+                 Padding="10, 0">
+      
+      <StackLayout Orientation="Vertical" 
+                   BackgroundColor="White" 
+                   HeightRequest="175" 
+                   WidthRequest="300" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Start" 
+                   Margin="0,20,0,0" >
+
+        <Label BackgroundColor="Black" FontSize="18" TextColor="White" HorizontalOptions="Fill" Text="Add a Player" />
+
+        <Entry x:Name="EnteredName" 
+               Placeholder="Player Name" 
+               TextColor="Black" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Center" 
+               WidthRequest="250" />
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+          <Button Text="Cancel" FontSize="Large"
+                      VerticalOptions="CenterAndExpand"
+                      HorizontalOptions="Center"
+                      Clicked="OnCancelButtonClicked"/>
+
+          <Button Text="OK" FontSize="Large"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"
+                        Clicked="OnOKButtonClicked" />
+        </StackLayout>
+
+      </StackLayout>
+
+
+    </ContentView>
+  </AbsoluteLayout>
+</ContentPage>
